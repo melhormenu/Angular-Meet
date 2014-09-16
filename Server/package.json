@@ -1,0 +1,11 @@
+{
+  "name": "rest-api",
+  "version": "0.0.1",
+  "description": "Simple api test.",
+  "main": "index.js",
+  "author": "Melhor Menu",
+  "dependencies": {
+    "express": "~4.9.*",
+    "mongoose": "~3.6.2"
+  }
+}

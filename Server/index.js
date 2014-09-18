@@ -7,7 +7,7 @@
   app = express();
 
   app.get('/karakuteco/:parametro', function(request, response) {
-    return response.send('Meu karakuteco ' + request.params.parametro);
+    return response.send('Meu ' + request.params.parametro);
   });
 
   app.listen(3000, function() {

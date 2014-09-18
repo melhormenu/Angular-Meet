@@ -1,0 +1,24 @@
+html(ng-app="")
+    head
+        meta(charset="utf-8")
+        title Meu Titulo (O botafogo não tem)
+        script(src="modules/angular/angular.min.js")
+
+    body(ng-init="people=[{'name': 'Coca'}, {'name': 'Kazlauskas'}, {'name': 'Jefferson'}, {'name': 'Hugo'}]")
+        h1 Olá {{ name }}! Seja bem vindo.
+        p Vose quer {{ quantity }} xicletinhos.
+        p Distribuidos na regia1 {{ region }}
+        p Produzido por: {{ developer }}
+        p Opçoes {{ change }}
+        ul
+            li(ng-repeat="person in people | filter:name") {{ $index }} - {{ person.name }}
+        form(action="#" method="get" ng-init="developer='Tabajara'")
+            input(type="text" ng-model="name" placeholder="digite o seu nome")
+            input(type="number" ng-model="quantity" placeholder="digite quantos xicletinhos vose quer." size="10")
+            label(for="norte") Ice
+            input(type="radio" id="norte" ng-model="region" value="Norte")
+            label(for="sul") Berg
+            input(type="radio" id="sul" ng-model="region" value="Sul")
+            input(type="text" value="Tabajara" ng-model="developer")
+            select(ng-model="change")
+                option(value="{{ $index }}" ng-repeat="person in people") {{ person.name }} - {{ $index }}

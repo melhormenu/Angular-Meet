@@ -1,0 +1,30 @@
+
+<html ng-app="">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Meu Titulo (O botafogo não tem)</title>
+    <script src="modules/angular/angular.min.js"></script>
+  </head>
+  <body ng-init="people=[{'name': 'Coca'}, {'name': 'Kazlauskas'}, {'name': 'Jefferson'}, {'name': 'Hugo'}]">
+    <h1>Olá {{ name }}! Seja bem vindo.</h1>
+    <p>Vose quer {{ quantity }} xicletinhos.</p>
+    <p>Distribuidos na regia1 {{ region }}</p>
+    <p>Produzido por: {{ developer }}</p>
+    <p>Opçoes {{ change }}</p>
+    <ul>
+      <li ng-repeat="person in people | filter:name">{{ $index }} - {{ person.name }}</li>
+    </ul>
+    <form action="#" method="get" ng-init="developer='Tabajara'">
+      <input type="text" ng-model="name" placeholder="digite o seu nome"/>
+      <input type="number" ng-model="quantity" placeholder="digite quantos xicletinhos vose quer." size="10"/>
+      <label for="norte">Ice</label>
+      <input type="radio" id="norte" ng-model="region" value="Norte"/>
+      <label for="sul">Berg</label>
+      <input type="radio" id="sul" ng-model="region" value="Sul"/>
+      <input type="text" value="Tabajara" ng-model="developer"/>
+      <select ng-model="change">
+        <option value="{{ $index }}" ng-repeat="person in people">{{ person.name }} - {{ $index }}</option>
+      </select>
+    </form>
+  </body>
+</html>

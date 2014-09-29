@@ -1,0 +1,28 @@
+
+<html ng-app="todo">
+  <head>
+    <meta charset="utf-8"/>
+    <title>To do (Tudu)</title>
+    <script src="modules/angular/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+  </head>
+  <body>
+    <h1>To do</h1>
+    <div ng-controller="TodoCtrl">
+      <ul>
+        <li ng-repeat="task in tasks">{{ task }}</li>
+      </ul>
+      <form>
+        <input type="text" ng-model="task" placeholder="Task"/>
+      </form>
+    </div>
+    <div ng-controller="EbooksCtrl">
+      <input type="text" ng-model="search"/>
+      <div ng-repeat="ebook in ebooks | filter:search" style="display:inline-block;width:40%;margin:10px 0;border:1px solid #ccc;padding:10px;display:block;float:left;clear:left;"><img ng-src="{{ ebook.Image }}" style="width:30%;display:block;float:left;"/>
+        <h3 style="width:65%;margin-left:5%;display:block;float:left;">{{ ebook.Title }}</h3>
+        <p style="width:65%;margin-left:5%;display:block;float:left;">{{ ebook.Description }}</p>
+        <p style="width:65%;margin-left:5%;display:block;float:left;">{{ ebook.isbn }}</p><a href="#" style="width:65%;margin-left:5%;display:block;float:left;">veja mais</a>
+      </div>
+    </div>
+  </body>
+</html>

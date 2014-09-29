@@ -1,0 +1,18 @@
+
+<html ng-app="todo">
+  <head>
+    <meta charset="utf-8"/>
+    <title>To do (Tudu)</title>
+    <script src="modules/angular/angular.min.js"></script>
+    <script src="js/todo.js"></script>
+  </head>
+  <body>
+    <h1>To do</h1>
+    <ul>
+      <li ng-repeat="task in tasks">{{ task }}</li>
+    </ul>
+    <form>
+      <input type="text" ng-model="task" placeholder="Task"/>
+    </form>
+  </body>
+</html>
